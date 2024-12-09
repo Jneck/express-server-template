@@ -14,7 +14,9 @@ RUN npm ci
 # Bundle app source
 COPY . .
 
+RUN npm run build
+
 EXPOSE 3000
 
 # Run the web service on container startup.
-CMD [ "node", "app.js" ]
+CMD [ "npm", "run", "start" ]

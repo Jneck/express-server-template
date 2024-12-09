@@ -6,6 +6,7 @@ const prisma = new PrismaClient({
 });
 const app = express();
 app.use(express.json());
+
 const port = 3000;
 
 app.get("/posts", async (req, res) => {
