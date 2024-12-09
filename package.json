@@ -14,19 +14,21 @@
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.1",
     "prisma": "^6.0.1",
+    "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
   },
   "scripts": {
-    "build": "npx tsc",
-    "start": "DATABASE_URL=postgresql://postgres:Vault1024!@35.222.127.255:5432/prisma_test node dist/index.js",
-    "migrate": "npx prisma migrate dev --name add",
+    "build": "npx webpack",
+    "start": "DATABASE_URL=postgresql://postgres:Vault1024!@35.222.127.255:5432/prisma_test node dist/bundle.js",
+    "migrate": "DATABASE_URL=postgresql://postgres:Vault1024!@35.222.127.255:5432/prisma_test npx prisma migrate dev --name add",
     "dev": "npx tsx --watch src/index.ts"
   },
   "author": {
-    "name": "ChanYoung Park",
-    "email": "chanyoung@vaultmicro.com"
+    "name": "ChanYoung Park"
   }
 }
