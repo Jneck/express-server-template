@@ -21,7 +21,7 @@
   },
   "scripts": {
     "build": "npx tsc",
-    "start": "node dist/index.js",
+    "start": "DATABASE_URL=postgresql://postgres:Vault1024!@35.222.127.255:5432/prisma_test node dist/index.js",
     "migrate": "npx prisma migrate dev --name ",
     "dev": "npx tsx --watch src/index.ts"
   },

@@ -16,6 +16,8 @@ COPY . .
 
 RUN npm run build
 
+RUN npm run migrate
+
 EXPOSE 3000
 
 # Run the web service on container startup.
