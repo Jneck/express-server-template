@@ -1,5 +1,5 @@
 import express from "express";
-import getPostRouter from "./controllers/post.controller";
+import getPostRouter from "./controllers/post-controller";
 
 const app = express();
 app.use(express.json());
