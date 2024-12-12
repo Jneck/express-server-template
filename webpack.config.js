@@ -2,7 +2,9 @@ const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 
 module.exports = {
-  entry: "./src/index.ts",
+  entry: {
+    index: "./src/index.ts",
+  },
   target: "node",
   module: {
     rules: [
@@ -16,10 +18,10 @@ module.exports = {
   externals: [nodeExternals(), { "@prisma/client": "commonjs @prisma/client" }],
   mode: "production",
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".ts", ".js"],
   },
   output: {
-    filename: "bundle.js",
+    filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
 };

@@ -1,7 +1,16 @@
-import { PrismaClient } from "@prisma/client";
-// postgres 연결
-const prisma = new PrismaClient({
-  errorFormat: "pretty",
-});
+import type { PrismaClient } from "@prisma/client";
 
-module.exports = prisma;
+let prismaInstance: PrismaClient | undefined;
+
+async function getPrismaClient(): Promise<PrismaClient> {
+  if (prismaInstance) {
+    return prismaInstance;
+  }
+  const { PrismaClient } = await import("@prisma/client");
+  prismaInstance = new PrismaClient({
+    errorFormat: "pretty",
+  });
+  return prismaInstance;
+}
+
+export default getPrismaClient;

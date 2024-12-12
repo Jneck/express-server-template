@@ -1,0 +1,1 @@
+(()=>{"use strict";var r={330:r=>{r.exports=require("@prisma/client")}},e={};new(function t(i){var o=e[i];if(void 0!==o)return o.exports;var s=e[i]={exports:{}};return r[i](s,s.exports,t),s.exports}(330).PrismaClient)({errorFormat:"pretty"})})();
